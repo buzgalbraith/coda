@@ -21,12 +21,28 @@ try {
 
 if (-not (Test-Path $Venv)) {
     Write-Host "Creating venv at $Venv"
-    python -m venv $Venv
+    python3.12 -m venv $Venv
 }
 Write-Host "Installing dependencies..."
 & "$Venv\Scripts\python.exe" -m pip install --quiet --upgrade pip
 & "$Venv\Scripts\python.exe" -m pip install --quiet `
     openai whisperlivekit faster-whisper numpy psutil py-cpuinfo matplotlib
+
+# The fine-tuned MedGemma model (backend champs_finetuned) runs through CODA's own
+# agent in PyTorch, so it needs CODA with its extra (building gilda's adeft dep needs
+# the Microsoft C++ Build Tools) and AMD's ROCm torch for the iGPU. Opt in with
+# $env:CODA_INBENCH_FINETUNED = "1".
+if ($env:CODA_INBENCH_FINETUNED -eq "1") {
+    $Repo = Resolve-Path "$Here\..\.."
+    Write-Host "Installing CODA with the champs-finetuned extra and ROCm torch..."
+    & "$Venv\Scripts\python.exe" -m pip install --quiet -e "$Repo[champs-finetuned]"
+    & "$Venv\Scripts\python.exe" -m pip install --quiet `
+        --index-url https://stable.repo.amd.com/rocm/whl-next/ `
+        "torch[device-gfx1151]==2.14.0+rocm10.1.0" "torchaudio==2.11.0.3+rocm10.1.0"
+    Write-Host "google/medgemma-4b-it is gated: accept its license on Hugging Face, then run"
+    Write-Host "  $Venv\Scripts\huggingface-cli.exe login"
+    Write-Host "and set inference.champs_finetuned.adapter_path in config\settings.yaml."
+}
 
 Write-Host ""
 Write-Host "Setup complete. Confirm your model ids first (CLI may be named"

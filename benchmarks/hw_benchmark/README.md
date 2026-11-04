@@ -61,6 +61,12 @@ machine's hardware.
 - `--audio path.wav` — your own 16 kHz mono clip for the STT stage.
 - `--stt-reps N` — real-time STT passes to average (default 3).
 - `--skip-stt` — inference only.
+- `--skip-llm` — speech-to-text only.
+- `--test-stt-backends` — run lemonade-whisper on each whisper.cpp backend (vulkan, rocm, npu, cpu).
+- `--llm-devices NAME ...` — run each model on whichever of these devices it
+  supports (llama.cpp: vulkan/rocm/cpu, torch: rocm/cpu) instead of its configured
+  `device`, e.g. `--llm-devices vulkan rocm cpu` for a full sweep. Each device is
+  reported (`llm_device`) and plotted separately.
 
 ## Plot
 
@@ -74,6 +80,33 @@ Reads every `results/*.json` and writes `comparison.png` + `summary.md`:
   apples-to-apples hardware comparison; other families show where a machine's own
   model set lands. Best measurement per (machine, model) is used.
 - **Speech-to-text**: real-time keep-up per machine, sorted by bandwidth.
+
+## Fine-tuned MedGemma (`champs_finetuned` backend)
+
+`MedGemma-4B-CHAMPS-FT` in `configs/ryzen.py` is CODA's LoRA fine-tune of
+`google/medgemma-4b-it`. It runs through `coda.inference.champs_finetuned` in-process
+(PyTorch) rather than Lemonade: it scores a fixed 60-cause menu by likelihood instead
+of generating JSON. Per-case latency is the same "narrative in, ranked causes out"
+measure as the other models; the one-time model load + adapter merge is reported
+separately as `load_sec`. It runs on `rocm` (the iGPU) or `cpu`, set by the config
+entry's `device` or `--llm-devices`.
+
+Setup (once): install the Microsoft C++ Build Tools (gilda's `adeft` dependency
+builds from source), run `setup.ps1` with `$env:CODA_INBENCH_FINETUNED = "1"` to
+install CODA with its `champs-finetuned` extra and AMD's ROCm torch for gfx1151,
+accept the `google/medgemma-4b-it` license on Hugging Face and `huggingface-cli login`,
+and set `inference.champs_finetuned.adapter_path` in `config/settings.yaml` (or put
+the path in the config entry's `id`). Then:
+
+```
+%USERPROFILE%\.virtualenvs\coda-inbench\Scripts\python.exe run_bench.py --skip-stt --models MedGemma-4B-CHAMPS-FT --llm-devices rocm
+```
+
+Caveats: it runs at bf16 in PyTorch, not Q4 in llama.cpp, and does no generation, so
+its latency reflects the classifier approach as CODA deploys it, not the model on the
+same engine. PyTorch has no Vulkan backend here, so compare it against each Lemonade
+model's fastest valid llama.cpp backend. The benchmark narratives have no decedent
+profile, so the prompt's evidence/clinical sections are empty.
 
 ## Comparability caveats
 - **Quantization** differs (Mac MLX-4bit / Ollama-Q4 vs Ryzen GGUF-Q4); the exact

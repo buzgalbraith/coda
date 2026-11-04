@@ -15,6 +15,8 @@ from pathlib import Path
 SRC = Path(__file__).resolve().parents[2] / "src" / "coda"
 CHAMPS = SRC / "resources" / "champs"
 PROMPTS = SRC / "inference" / "champs_prompted" / "prompts"
+# CODA's inference.question_style (default | simplified)
+QUESTION_STYLE = "default"
 
 COD_OUTPUT_SCHEMA = {
     "type": "object",
@@ -62,7 +64,9 @@ def build_system_prompt():
         (CHAMPS / "group_causes.txt").read_text().splitlines() if c.strip()]
     system_prompt = (PROMPTS / "icd10" / "system_prompt.txt").read_text()
     schema_guidance = (PROMPTS / "icd10" / "schema_guidance.txt").read_text()
-    return system_prompt.format(allowed_causes=", ".join(causes)) + "\n\n" + schema_guidance
+    question_guidance = (PROMPTS / f"question_style_{QUESTION_STYLE}.txt").read_text().strip()
+    return system_prompt.format(allowed_causes=", ".join(causes),
+        question_guidance=question_guidance) + "\n\n" + schema_guidance
 
 
 def user_prompt(narrative):

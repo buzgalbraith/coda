@@ -1,0 +1,1126 @@
+{
+  "config": "ryzen",
+  "hardware": {
+    "chip": "AMD RYZEN AI MAX+ 388 w/ Radeon 8060S",
+    "ram_gb": 16,
+    "bandwidth_gbps": 256,
+    "cpu_cores": 8,
+    "os": "Windows 11"
+  },
+  "timestamp": "2026-11-04T14:10:27",
+  "n_narratives": 10,
+  "stt": null,
+  "models": [
+    {
+      "name": "Qwen2.5-7B-Instruct-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Qwen2.5-7B-Instruct-GGUF-Q4_K_M",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 4.19,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 5.1,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 2,
+          "latency_sec": 5.26,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 4.81,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 4.88,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 6.66,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 6,
+          "latency_sec": 5.89,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 5.43,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 4.64,
+          "valid": true,
+          "top_cause": "Congenital heart diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 4.26,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 5.11,
+      "median_latency_sec": 4.99,
+      "stdev_latency_sec": 0.75,
+      "min_latency_sec": 4.19,
+      "max_latency_sec": 6.66
+    },
+    {
+      "name": "Qwen2.5-7B-Instruct-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Qwen2.5-7B-Instruct-GGUF-Q4_K_M",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 176.8,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 1,
+          "latency_sec": 179.51,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 2,
+          "latency_sec": 180.61,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 3,
+          "latency_sec": 182.51,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 4,
+          "latency_sec": 181.22,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 5,
+          "latency_sec": 181.13,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 6,
+          "latency_sec": 6.79,
+          "valid": true,
+          "top_cause": "Severe or suspected meningitis/sepsis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 181.34,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 8,
+          "latency_sec": 181.88,
+          "valid": false,
+          "top_cause": null
+        },
+        {
+          "i": 9,
+          "latency_sec": 4.18,
+          "valid": true,
+          "top_cause": "Drowning"
+        }
+      ],
+      "valid_rate": 0.2,
+      "mean_latency_sec": 5.48,
+      "median_latency_sec": 5.48,
+      "stdev_latency_sec": 1.85,
+      "min_latency_sec": 4.18,
+      "max_latency_sec": 6.79
+    },
+    {
+      "name": "gpt-oss-20b-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "gpt-oss-20b-GGUF-MXFP4",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 12.36,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 18.34,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 14.32,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 30.12,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 15.35,
+          "valid": true,
+          "top_cause": "Upper respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 12.49,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 17.0,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 19.51,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 10.36,
+          "valid": true,
+          "top_cause": "Congenital birth defects"
+        },
+        {
+          "i": 9,
+          "latency_sec": 10.91,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 16.08,
+      "median_latency_sec": 14.84,
+      "stdev_latency_sec": 5.82,
+      "min_latency_sec": 10.36,
+      "max_latency_sec": 30.12
+    },
+    {
+      "name": "gpt-oss-20b-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "gpt-oss-20b-GGUF-MXFP4",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 9.84,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 13.91,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 13.63,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 11.83,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 46.31,
+          "valid": true,
+          "top_cause": "Upper respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 11.73,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 12.67,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 9.52,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 13.22,
+          "valid": true,
+          "top_cause": "Congenital birth defects"
+        },
+        {
+          "i": 9,
+          "latency_sec": 8.94,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 15.16,
+      "median_latency_sec": 12.25,
+      "stdev_latency_sec": 11.08,
+      "min_latency_sec": 8.94,
+      "max_latency_sec": 46.31
+    },
+    {
+      "name": "Qwen3-8B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Qwen3-8B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 6.4,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 7.24,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 7.11,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 6.46,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 6.5,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 6.54,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 6.48,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 5.9,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 6.2,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 5.14,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 6.4,
+      "median_latency_sec": 6.47,
+      "stdev_latency_sec": 0.59,
+      "min_latency_sec": 5.14,
+      "max_latency_sec": 7.24
+    },
+    {
+      "name": "Qwen3-8B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Qwen3-8B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 6.87,
+          "valid": true,
+          "top_cause": "Lower Respiratory Infections (LRI)"
+        },
+        {
+          "i": 1,
+          "latency_sec": 5.19,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 7.04,
+          "valid": true,
+          "top_cause": "Undetermined"
+        },
+        {
+          "i": 3,
+          "latency_sec": 9.34,
+          "valid": true,
+          "top_cause": "Sepsis"
+        },
+        {
+          "i": 4,
+          "latency_sec": 7.33,
+          "valid": true,
+          "top_cause": "Lower Respiratory Infections (LRI)"
+        },
+        {
+          "i": 5,
+          "latency_sec": 6.61,
+          "valid": true,
+          "top_cause": "Undetermined"
+        },
+        {
+          "i": 6,
+          "latency_sec": 6.26,
+          "valid": true,
+          "top_cause": "Undetermined"
+        },
+        {
+          "i": 7,
+          "latency_sec": 5.97,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 7.16,
+          "valid": true,
+          "top_cause": "Undetermined"
+        },
+        {
+          "i": 9,
+          "latency_sec": 6.65,
+          "valid": true,
+          "top_cause": "Undetermined"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 6.84,
+      "median_latency_sec": 6.76,
+      "stdev_latency_sec": 1.08,
+      "min_latency_sec": 5.19,
+      "max_latency_sec": 9.34
+    },
+    {
+      "name": "Qwen3-30B-A3B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Qwen3-30B-A3B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 3.17,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 3.47,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 3.28,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 3.13,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 3.33,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 3.5,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 3.72,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 3.07,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 3.34,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 2.86,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 3.29,
+      "median_latency_sec": 3.3,
+      "stdev_latency_sec": 0.24,
+      "min_latency_sec": 2.86,
+      "max_latency_sec": 3.72
+    },
+    {
+      "name": "Qwen3-30B-A3B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Qwen3-30B-A3B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 3.43,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 3.76,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 3.68,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 3.39,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 3.58,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 3.96,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 4.11,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 3.4,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 3.56,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 3.17,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 3.6,
+      "median_latency_sec": 3.57,
+      "stdev_latency_sec": 0.28,
+      "min_latency_sec": 3.17,
+      "max_latency_sec": 4.11
+    },
+    {
+      "name": "Gemma-4-26B-A4B-it-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Gemma-4-26B-A4B-it-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 14.28,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 16.65,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 17.91,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 17.97,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 18.47,
+          "valid": true,
+          "top_cause": "Other respiratory disease"
+        },
+        {
+          "i": 5,
+          "latency_sec": 17.61,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 17.34,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 18.01,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 17.26,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 16.19,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 17.17,
+      "median_latency_sec": 17.48,
+      "stdev_latency_sec": 1.22,
+      "min_latency_sec": 14.28,
+      "max_latency_sec": 18.47
+    },
+    {
+      "name": "Gemma-4-26B-A4B-it-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Gemma-4-26B-A4B-it-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 5.93,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 7.43,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 7.05,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 6.86,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 6.9,
+          "valid": true,
+          "top_cause": "Upper respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 7.19,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 6.64,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 6.68,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 6.72,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 5.09,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 6.65,
+      "median_latency_sec": 6.79,
+      "stdev_latency_sec": 0.68,
+      "min_latency_sec": 5.09,
+      "max_latency_sec": 7.43
+    },
+    {
+      "name": "Qwen3-14B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Qwen3-14B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 8.31,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 10.23,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 9.75,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 8.66,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 10.45,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 5,
+          "latency_sec": 8.64,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 9.56,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 8.34,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 9.59,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 8.45,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 9.2,
+      "median_latency_sec": 9.11,
+      "stdev_latency_sec": 0.81,
+      "min_latency_sec": 8.31,
+      "max_latency_sec": 10.45
+    },
+    {
+      "name": "Qwen3-14B-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Qwen3-14B-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 9.32,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 9.44,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 9.85,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 7.71,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 9.63,
+          "valid": true,
+          "top_cause": "Respiratory failure due to airway obstruction"
+        },
+        {
+          "i": 5,
+          "latency_sec": 10.54,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 13.56,
+          "valid": true,
+          "top_cause": "Meningococcal meningitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 10.52,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 7.44,
+          "valid": true,
+          "top_cause": "Congenital heart disease"
+        },
+        {
+          "i": 9,
+          "latency_sec": 7.19,
+          "valid": true,
+          "top_cause": "Drowning"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 9.52,
+      "median_latency_sec": 9.54,
+      "stdev_latency_sec": 1.87,
+      "min_latency_sec": 7.19,
+      "max_latency_sec": 13.56
+    },
+    {
+      "name": "Gemma-4-12B-it-GGUF",
+      "backend": "lemonade",
+      "llm_device": "vulkan",
+      "id": "Gemma-4-12B-it-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 24.0,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 27.61,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 28.19,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 28.61,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 27.94,
+          "valid": true,
+          "top_cause": "Other respiratory disease"
+        },
+        {
+          "i": 5,
+          "latency_sec": 27.99,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 28.8,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 28.47,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 28.42,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 27.49,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 27.75,
+      "median_latency_sec": 28.09,
+      "stdev_latency_sec": 1.38,
+      "min_latency_sec": 24.0,
+      "max_latency_sec": 28.8
+    },
+    {
+      "name": "Gemma-4-12B-it-GGUF",
+      "backend": "lemonade",
+      "llm_device": "rocm",
+      "id": "Gemma-4-12B-it-GGUF",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 10.87,
+          "valid": true,
+          "top_cause": "Lower respiratory infections"
+        },
+        {
+          "i": 1,
+          "latency_sec": 10.77,
+          "valid": true,
+          "top_cause": "Diarrheal Diseases"
+        },
+        {
+          "i": 2,
+          "latency_sec": 9.75,
+          "valid": true,
+          "top_cause": "Neonatal sepsis"
+        },
+        {
+          "i": 3,
+          "latency_sec": 10.48,
+          "valid": true,
+          "top_cause": "Malaria"
+        },
+        {
+          "i": 4,
+          "latency_sec": 10.57,
+          "valid": true,
+          "top_cause": "Other respiratory disease"
+        },
+        {
+          "i": 5,
+          "latency_sec": 10.55,
+          "valid": true,
+          "top_cause": "Measles"
+        },
+        {
+          "i": 6,
+          "latency_sec": 10.29,
+          "valid": true,
+          "top_cause": "Meningitis/Encephalitis"
+        },
+        {
+          "i": 7,
+          "latency_sec": 10.34,
+          "valid": true,
+          "top_cause": "Malnutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 11.12,
+          "valid": true,
+          "top_cause": "Heart Diseases"
+        },
+        {
+          "i": 9,
+          "latency_sec": 9.19,
+          "valid": true,
+          "top_cause": "Injury"
+        }
+      ],
+      "valid_rate": 1.0,
+      "mean_latency_sec": 10.39,
+      "median_latency_sec": 10.52,
+      "stdev_latency_sec": 0.56,
+      "min_latency_sec": 9.19,
+      "max_latency_sec": 11.12
+    },
+    {
+      "name": "MedGemma-4B-CHAMPS-FT",
+      "backend": "champs_finetuned",
+      "llm_device": "rocm",
+      "id": "C:\\Users\\buzga\\medgemma4b\\fine-tuned\\all_lora\\checkpoint-382-20261020T145245Z-1-001\\checkpoint-382\\",
+      "cases": [
+        {
+          "i": 0,
+          "latency_sec": 1.37,
+          "valid": true,
+          "top_cause": "Unspecified undernutrition"
+        },
+        {
+          "i": 1,
+          "latency_sec": 1.36,
+          "valid": true,
+          "top_cause": "Unspecified undernutrition"
+        },
+        {
+          "i": 2,
+          "latency_sec": 1.39,
+          "valid": true,
+          "top_cause": "Infections of the fetus or newborn, unspecified"
+        },
+        {
+          "i": 3,
+          "latency_sec": 1.51,
+          "valid": true,
+          "top_cause": "Plasmodium falciparum malaria with cerebral complications"
+        },
+        {
+          "i": 4,
+          "latency_sec": 1.53,
+          "valid": true,
+          "top_cause": "Pneumonia due to Streptococcus pneumoniae"
+        },
+        {
+          "i": 5,
+          "latency_sec": 1.52,
+          "valid": true,
+          "top_cause": "Bacterial infection of unspecified site"
+        },
+        {
+          "i": 6,
+          "latency_sec": 1.5,
+          "valid": true,
+          "top_cause": "Bacterial infection of unspecified site"
+        },
+        {
+          "i": 7,
+          "latency_sec": 1.48,
+          "valid": true,
+          "top_cause": "Unspecified undernutrition"
+        },
+        {
+          "i": 8,
+          "latency_sec": 1.52,
+          "valid": true,
+          "top_cause": "Structural developmental anomaly of heart or great vessels, unspecified"
+        },
+        {
+          "i": 9,
+          "latency_sec": 1.49,
+          "valid": true,
+          "top_cause": "Harmful effects of or exposure to noxious substances, chiefly nonmedicinal as to source, not elsewhere classified"
+        }
+      ],
+      "load_sec": 50.72,
+      "valid_rate": 1.0,
+      "mean_latency_sec": 1.47,
+      "median_latency_sec": 1.5,
+      "stdev_latency_sec": 0.07,
+      "min_latency_sec": 1.36,
+      "max_latency_sec": 1.53
+    }
+  ]
+}

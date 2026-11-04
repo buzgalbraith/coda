@@ -1,0 +1,180 @@
+{
+  "config": "ryzen",
+  "hardware": {
+    "chip": "AMD RYZEN AI MAX+ 388 w/ Radeon 8060S",
+    "ram_gb": 31,
+    "bandwidth_gbps": 256,
+    "cpu_cores": 8,
+    "os": "Windows 11"
+  },
+  "timestamp": "2026-11-04T15:12:54",
+  "n_narratives": 10,
+  "stt": null,
+  "models": [],
+  "stt_backends": [
+    {
+      "backend": "lemonade-whisper",
+      "reps": 3,
+      "clip_sec": 38.56,
+      "keep_up_mean": 1.019,
+      "keep_up_median": 1.019,
+      "peak_gb": 0.55,
+      "runs": [
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 39.42,
+          "keep_up": 1.022,
+          "committed_words": 136,
+          "peak_gb": 0.54
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 39.21,
+          "keep_up": 1.017,
+          "committed_words": 136,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 39.3,
+          "keep_up": 1.019,
+          "committed_words": 136,
+          "peak_gb": 0.55
+        }
+      ],
+      "whispercpp_backend": "vulkan"
+    },
+    {
+      "backend": "lemonade-whisper",
+      "reps": 3,
+      "clip_sec": 38.56,
+      "keep_up_mean": 1.03,
+      "keep_up_median": 1.026,
+      "peak_gb": 0.55,
+      "runs": [
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 39.55,
+          "keep_up": 1.026,
+          "committed_words": 137,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 40.08,
+          "keep_up": 1.039,
+          "committed_words": 134,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 39.55,
+          "keep_up": 1.026,
+          "committed_words": 136,
+          "peak_gb": 0.55
+        }
+      ],
+      "whispercpp_backend": "rocm"
+    },
+    {
+      "backend": "lemonade-whisper",
+      "reps": 3,
+      "clip_sec": 38.56,
+      "keep_up_mean": 1.659,
+      "keep_up_median": 1.662,
+      "peak_gb": 0.55,
+      "runs": [
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 63.69,
+          "keep_up": 1.652,
+          "committed_words": 132,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 64.17,
+          "keep_up": 1.664,
+          "committed_words": 132,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 64.08,
+          "keep_up": 1.662,
+          "committed_words": 131,
+          "peak_gb": 0.55
+        }
+      ],
+      "whispercpp_backend": "npu"
+    },
+    {
+      "backend": "lemonade-whisper",
+      "reps": 3,
+      "clip_sec": 38.56,
+      "keep_up_mean": 3.052,
+      "keep_up_median": 3.029,
+      "peak_gb": 0.55,
+      "runs": [
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 121.7,
+          "keep_up": 3.156,
+          "committed_words": 133,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 114.53,
+          "keep_up": 2.97,
+          "committed_words": 133,
+          "peak_gb": 0.55
+        },
+        {
+          "mode": "stream",
+          "backend": "openai-api",
+          "model": "small",
+          "clip_sec": 38.56,
+          "wall_sec": 116.79,
+          "keep_up": 3.029,
+          "committed_words": 133,
+          "peak_gb": 0.55
+        }
+      ],
+      "whispercpp_backend": "cpu"
+    }
+  ]
+}

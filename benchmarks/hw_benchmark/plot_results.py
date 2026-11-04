@@ -29,7 +29,7 @@ GRID = "#e7e6e2"
 SURFACE = "#fcfcfb"
 
 # Fixed family order (roughly ascending model size), for stable panel layout.
-FAMILY_ORDER = ["Qwen2.5-7B", "Qwen3-8B", "Qwen3-14B", "gpt-oss-20B",
+FAMILY_ORDER = ["MedGemma-4B", "Qwen2.5-7B", "Qwen3-8B", "Qwen3-14B", "gpt-oss-20B",
                 "Gemma-4-12B", "Gemma-4-26B", "Qwen3-30B-A3B"]
 # Colorblind-safe categorical slots (validated): identity here is vendor.
 VENDOR_COLOR = {"Apple": "#2a78d6", "AMD": "#eb6834"}
@@ -39,6 +39,7 @@ SHARED_FAMILY = "Qwen2.5-7B"
 def family_of(name, model_id):
     s = f"{name} {model_id or ''}".lower()
     rules = [
+        ("MedGemma-4B", ("medgemma",)),
         ("Qwen2.5-7B", ("qwen2.5-7b", "qwen2.5:7b")),
         ("Qwen3-30B-A3B", ("qwen3-30b",)),
         ("Qwen3-14B", ("qwen3-14b",)),
@@ -66,7 +67,7 @@ def vendor(chip):
 
 
 def load_machines():
-    """One record per chip, keeping each (chip, family)'s best measurement."""
+    """One record per chip (and llama.cpp backend), keeping each family's best measurement."""
     stt = {}
     bw = {}
     vend = {}
@@ -80,19 +81,34 @@ def load_machines():
             continue
         bw[chip] = hw.get("bandwidth_gbps")
         vend[chip] = vendor(hw.get("chip"))
-        s = d.get("stt") or {}
-        if isinstance(s, dict) and s.get("keep_up_mean") is not None:
-            if chip not in stt or d.get("timestamp", "") > stt[chip][1]:
-                stt[chip] = (s["keep_up_mean"], d.get("timestamp", ""))
+        # The default STT run is keyed by chip; each whisper.cpp backend from a
+        # --test-stt-backends sweep is its own machine, like llama.cpp backends below.
+        stt_runs = [d.get("stt")] + (d.get("stt_backends") or [])
+        for s in stt_runs:
+            if not isinstance(s, dict) or s.get("keep_up_mean") is None:
+                continue
+            wb = s.get("whispercpp_backend")
+            machine = f"{chip} [{wb}]" if wb else chip
+            bw[machine] = bw[chip]
+            vend[machine] = vend[chip]
+            if machine not in stt or d.get("timestamp", "") > stt[machine][1]:
+                stt[machine] = (s["keep_up_mean"], d.get("timestamp", ""))
         for m in d.get("models", []):
             if m.get("mean_latency_sec") is None:
                 continue
+            # Each device (llama.cpp backend or torch device) is plotted as its own
+            # machine; older reports used llamacpp_backend / torch_device.
+            lb = (m.get("llm_device") or m.get("llamacpp_backend")
+                  or m.get("torch_device"))
+            machine = f"{chip} [{lb}]" if lb else chip
+            bw[machine] = bw[chip]
+            vend[machine] = vend[chip]
             fam = family_of(m.get("name", ""), m.get("id"))
             row = {"mean": m["mean_latency_sec"], "sd": m.get("stdev_latency_sec") or 0,
                    "valid": m.get("valid_rate", 0), "ts": d.get("timestamp", "")}
-            prev = per_family[chip].get(fam)
+            prev = per_family[machine].get(fam)
             if prev is None or (row["valid"], row["ts"]) > (prev["valid"], prev["ts"]):
-                per_family[chip][fam] = row
+                per_family[machine][fam] = row
     return {"bw": bw, "vendor": vend, "stt": {k: v[0] for k, v in stt.items()},
             "families": per_family}
 
