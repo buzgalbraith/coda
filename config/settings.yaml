@@ -94,7 +94,7 @@ inference:
     # code selection)
     passes: 1
   champs_finetuned:         # CHAMPS-fine-tuned classifier agent (MedGemma LoRA)
-    adapter_path: "C:\Users\buzga\medgemma4b\fine-tuned\all_lora\checkpoint-382-20261020T145245Z-1-001\checkpoint-382\"        # local path to the LoRA adapter; set via CODA_INFERENCE__CHAMPS_FINETUNED__ADAPTER_PATH
+    adapter_path: ""        # local path to the LoRA adapter; set via CODA_INFERENCE__CHAMPS_FINETUNED__ADAPTER_PATH
     menu: icd_all_labels.json
     top_k: 3
     batch_size: 8
